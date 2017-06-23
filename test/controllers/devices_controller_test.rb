@@ -4,7 +4,7 @@ class DevicesControllerTest < ActionDispatch::IntegrationTest
 
   setup do
     redis = Redis.new
-    redis.set 'devices_list', [].to_json
+    redis.set 'devices_list', [{chipid: '1234', state: 'off', pinged_at: Time.now}].to_json
   end
   
   test "should get index" do
